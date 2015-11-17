@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-    <div id="content" class="container">
+    <div id="content" class="container single-content">
         <?php while ( have_posts() ) : the_post(); ?>
             <article class="post-item">
                 <header class="post-header">
@@ -19,6 +19,9 @@
                     <?php endif;?>
                 </div>
             </article>
+            <div class="post-action">
+                <?php if( function_exists('wp_postlike')) wp_postlike();?>
+            </div>
             <div class="author-info u-clearfix">
                 <?php echo get_avatar( get_the_author_meta( 'user_email' ), 64 );?>
                 <div class="author-content">

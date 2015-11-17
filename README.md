@@ -1,2 +1,3 @@
 # Cheetah
-it's a hole
+
+Wordpress 版本需安装插件`wp-postlike`

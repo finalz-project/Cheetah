@@ -1,5 +1,6 @@
 <?php get_header(); ?>
     <div id="content" class="container">
+    <div class="blockGroup">
         <?php while ( have_posts() ) : the_post(); ?>
             <article class="post-item">
                 <header class="post-header">
@@ -14,8 +15,10 @@
                     <?php if(has_post_thumbnail()):?>
                         <p class="with-img"><?php the_post_thumbnail( 'full' ); ?></p>
                         <p><?php echo mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, 220,"...");?></p>
+                        <p class="u-textAlignCenter"><a class="more-link" href="<?php the_permalink();?>" title="<?php the_title();?>">More Photos</a></p>
                     <?php else : ?>
                         <?php the_content('');?>
+                        <p class="u-textAlignCenter"><a class="more-link" href="<?php the_permalink();?>" title="<?php the_title();?>">More Photos</a></p>
                     <?php endif;?>
                 </div>
                 <div class="post-footer">
@@ -30,5 +33,6 @@
                     'mid_size' => 2
                 ) );?>
             </div></div>
+        </div>
     </div>
 <?php get_footer(); ?>

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <div id="content" class="container">
+    <div id="content" class="container single-content">
         <?php while ( have_posts() ) : the_post(); ?>
             <article class="post-item">
                 <header class="post-header">
