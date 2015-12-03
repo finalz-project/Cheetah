@@ -1,8 +1,8 @@
 <?php
-define('CHEETAH_VERSION','1.0.3');
+define('CHEETAH_VERSION','1.0.4');
 
 function cheetah_get_ssl_avatar($avatar) {
-    $avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com"), "cn.gravatar.com", $avatar);
+    $avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com"), "secure.gravatar.com", $avatar);
     return $avatar;
 }
 add_filter('get_avatar', 'cheetah_get_ssl_avatar');
@@ -43,6 +43,9 @@ function cheetah_setup() {
     add_theme_support( 'html5', array(
         'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
     ) );
+    add_theme_support( 'post-format',array(
+        'status'
+        ));
 }
 
 add_action( 'after_setup_theme', 'cheetah_setup' );
