@@ -1,6 +1,5 @@
 <?php get_header(); ?>
-
-    <div id="content" class="container single-content">
+    <div class="container single-content">
         <?php while ( have_posts() ) : the_post(); ?>
             <article class="post-item">
                 <header class="post-header">
@@ -15,6 +14,6 @@
                     <?php the_content(); ?>
                 </div>
             </article>
-        <?php endwhile; // end of the loop. ?>
+        <?php endwhile; ?>
     </div>
 <?php get_footer(); ?>

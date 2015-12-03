@@ -1,14 +1,15 @@
 <?php
+define('CHEETAH_VERSION','1.0.3');
 
-function get_ssl_avatar($avatar) {
+function cheetah_get_ssl_avatar($avatar) {
     $avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com"), "cn.gravatar.com", $avatar);
     return $avatar;
 }
-add_filter('get_avatar', 'get_ssl_avatar');
+add_filter('get_avatar', 'cheetah_get_ssl_avatar');
 
 function cheetah_scripts_styles() {
 
-    wp_enqueue_style( 'cheetah', get_template_directory_uri() . '/static/css/main.css', array(), '2015-11-09' );
+    wp_enqueue_style( 'cheetah', get_template_directory_uri() . '/static/css/main.css', array(), CHEETAH_VERSION );
 
 }
 add_action( 'wp_enqueue_scripts', 'cheetah_scripts_styles' );
