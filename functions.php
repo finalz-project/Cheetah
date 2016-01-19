@@ -1,6 +1,16 @@
 <?php
 define('CHEETAH_VERSION','1.0.4');
 
+function recover_comment_fields($comment_fields){
+    $comment = array_shift($comment_fields);
+    $comment_fields =  array_merge($comment_fields ,array('comment' => $comment));
+    return $comment_fields;
+}
+
+if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '>' ) ) {
+    add_filter('comment_form_fields','recover_comment_fields');
+}
+
 function cheetah_get_ssl_avatar($avatar) {
     $avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com"), "secure.gravatar.com", $avatar);
     return $avatar;
