@@ -11,10 +11,10 @@
         <?php if(has_post_thumbnail()):?>
             <p class="with-img"><?php the_post_thumbnail( 'full' ); ?></p>
             <p><?php echo mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, 220,"...");?></p>
-            <p class="u-textAlignCenter"><a class="more-link" href="<?php the_permalink();?>" title="<?php the_title();?>">More Photos</a></p>
+            <p class="u-textAlignCenter"><a class="more-link" href="<?php the_permalink();?>" title="<?php the_title();?>">Read More</a></p>
         <?php else : ?>
             <?php the_content('');?>
-            <p class="u-textAlignCenter"><a class="more-link" href="<?php the_permalink();?>" title="<?php the_title();?>">More Photos</a></p>
+            <p class="u-textAlignCenter"><a class="more-link" href="<?php the_permalink();?>" title="<?php the_title();?>">Read More</a></p>
         <?php endif;?>
     </div>
     <div class="post-footer">

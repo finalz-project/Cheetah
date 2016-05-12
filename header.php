@@ -15,6 +15,6 @@
         <a href="/"><img src="<?php echo get_template_directory_uri();?>/static/img/logo.png" width=200 height=50 alt="<?php bloginfo( 'name' ); ?>"></a>
     </h1>
     <nav class="site-nav">
-        <?php wp_nav_menu( array( 'theme_location' => 'cheetah','menu_class'=>'topNav-items','container'=>'ul','fallback_cb' => 'link_to_menu_editor')); ?>
+        <?php wp_nav_menu( array( 'theme_location' => 'header-menu','menu_class'=>'topNav-items','container'=>'ul','fallback_cb' => 'link_to_menu_editor')); ?>
     </nav>
 </header>

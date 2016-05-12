@@ -1,15 +1,5 @@
 <?php
-define('CHEETAH_VERSION','1.0.4');
-
-function recover_comment_fields($comment_fields){
-    $comment = array_shift($comment_fields);
-    $comment_fields =  array_merge($comment_fields ,array('comment' => $comment));
-    return $comment_fields;
-}
-
-if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '>' ) ) {
-    add_filter('comment_form_fields','recover_comment_fields');
-}
+define('CHEETAH_VERSION','1.0.5');
 
 function cheetah_get_ssl_avatar($avatar) {
     $avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com"), "secure.gravatar.com", $avatar);
@@ -48,7 +38,7 @@ function cheetah_wp_title( $title, $sep ) {
 add_filter( 'wp_title', 'cheetah_wp_title', 10, 2 );
 
 function cheetah_setup() {
-    register_nav_menu( 'cheetah', '主题菜单' );
+    register_nav_menu( 'header-menu', '主题菜单' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'html5', array(
         'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
